@@ -36,6 +36,37 @@ getCarsById(id: number): Observable<Car>{
   )
 }
 
+// salvar o carro
+
+saveCar(car: Car): Observable<Car>{
+  return this.httpClient.post<Car>(this.url, JSON.stringify(car), this.httpOptions)
+  .pipe(
+    retry(2),
+    catchError(this.handleError)
+    )
+}
+
+//deletar um carro
+
+deleteCarById(car: Car){
+  return this.httpClient.delete<Car>(this.url + "/" + car.id, this.httpOptions)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+    )
+}
+
+//Atualizar o carro
+
+updateCarById(car: Car): Observable<Car>{
+  return this.httpClient.put<Car>(this.url + '/' + car.id, JSON.stringify(car), this.httpOptions)
+  .pipe(
+    retry(1),
+    catchError(this.handleError)
+    )
+}
+
+
 // Manipulação de erros
 
 handleError(error: HttpErrorResponse) {

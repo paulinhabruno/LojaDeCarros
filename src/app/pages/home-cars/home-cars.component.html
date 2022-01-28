@@ -1,0 +1,47 @@
+<!--Criação do navbar-->
+
+<nav arial-label= "breadcrumb">
+  <ol class="breadcrumb">
+    <mat-icon class = "iconCar">directions_car</mat-icon>
+    <li class = "breadcrumb-item active" aria-current="page">{{ title }}</li>
+  </ol>
+</nav>
+
+<!--Corpo-->
+<div class="container">
+  <div class="card list-card">
+    <h5 class="card-header">Lista de Carros</h5>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{car.id}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.color}}</td>
+            <td>{{car.price | currency: 'BRL'}}</td>
+            <td>{{car.action}}</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-sm">Detalhes</button>
+              <button type="button" class="btn btn-warning btn-sm ml-1">Editar</button>
+              <button type="button" class="btn btn-danger btn-sm m1-1">Deletar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="btn btn-primary">Adicionar Carro</button>
+  </div>
+
+</div>

@@ -17,6 +17,18 @@
       "model": "Land Rover Range Rover Velar",
       "color": "Branco",
       "price": 377.38
+    },
+    {
+      "id": 4,
+      "model": "Xsara Picasso",
+      "color": "Cinza",
+      "price": 15000
+    },
+    {
+      "id": 5,
+      "model": "C3",
+      "color": "Prata",
+      "price": 9500
     }
   ]
 }

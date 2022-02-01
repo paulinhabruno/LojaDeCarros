@@ -32,5 +32,11 @@ export class HomeCarsComponent implements OnInit {
       this.cars = cars;
     })
   }
+  //chama o serviço para deletar um carro.
 
+  deleteCar(car: Car){
+    this.carService.deleteCarById(car).subscribe(()=> {
+      this.getCars();
+    })
+  }
 }

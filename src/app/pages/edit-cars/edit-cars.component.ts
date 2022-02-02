@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
-  selector: 'app-detail-cars',
-  templateUrl: './detail-cars.component.html',
-  styleUrls: ['./detail-cars.component.css']
+  selector: 'app-edit-cars',
+  templateUrl: './edit-cars.component.html',
+  styleUrls: ['./edit-cars.component.css']
 })
-export class DetailCarsComponent implements OnInit {
+export class EditCarsComponent implements OnInit {
 
   checkoutForm!: FormGroup;
   cars!: Car;
@@ -17,18 +17,17 @@ export class DetailCarsComponent implements OnInit {
 
   constructor(
     private carService: CarService,
+    private activatedRoute: ActivatedRoute,
     private fb: FormBuilder,
-    private activatedRoute: ActivatedRoute
-  ) { this.createFormEmpty() }
+    private router: Router) { this.createFormEmpty() }
 
-  ngOnInit(): void {  
-    const carId = this.id = this.activatedRoute.snapshot.params['id'];
+  ngOnInit(): void {
 
-    this.carService.getCarsById(carId).subscribe(
-      data => {
-        this.createForm(data);
-      }
-    )
+    let carId = this.id = this.activatedRoute.snapshot.params['id'];
+
+    this.carService.getCarsById(carId).subscribe(data => {
+      this.createForm(data)
+    })
   }
 
   createForm(cars: Car){
@@ -44,6 +43,13 @@ export class DetailCarsComponent implements OnInit {
       model: [''],
       color: [''],
       price: [''],
+    })
+  }
+
+  UpdateFormCar(){
+    const updateCar = this.checkoutForm.getRawValue() as Car;
+    this.carService.updateCarById(updateCar).subscribe(() => {
+      this.router.navigate([''])
     })
   }
 

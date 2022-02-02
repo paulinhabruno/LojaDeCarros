@@ -4,19 +4,13 @@
       "id": 1,
       "model": "BMW X7",
       "color": "Preto",
-      "price": 455.95
+      "price": 450000
     },
     {
       "id": 2,
       "model": "Mercedes benz c180",
       "color": "Azul",
-      "price": 194.9
-    },
-    {
-      "id": 3,
-      "model": "Land Rover Range Rover Velar",
-      "color": "Branco",
-      "price": 377.38
+      "price": 21000
     },
     {
       "id": 4,
@@ -29,6 +23,12 @@
       "model": "C3",
       "color": "Prata",
       "price": 9500
+    },
+    {
+      "id": 6,
+      "model": "C4",
+      "color": "Preto",
+      "price": 19450
     }
   ]
 }

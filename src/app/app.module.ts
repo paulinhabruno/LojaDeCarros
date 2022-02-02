@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { NewCarsComponent } from './pages/new-cars/new-cars.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditCarsComponent } from './pages/edit-cars/edit-cars.component';
 
 
 
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     DetailCarsComponent,
     HomeCarsComponent,
-    NewCarsComponent
+    NewCarsComponent,
+    EditCarsComponent
   ],
   imports: [
     BrowserModule,

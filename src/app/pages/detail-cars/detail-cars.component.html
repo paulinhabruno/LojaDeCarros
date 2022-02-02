@@ -1,1 +1,22 @@
-<p>detail-cars works!</p>
+<div class="card add-card">
+  <h5 class="card-header">Detalhes do carro</h5>
+  <div class="card-body">
+    <form [formGroup]="checkoutForm">
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" name="id" formControlName="id" class="form-control" readonly >
+
+        <label for="model">Modelo</label>
+        <input type="text" name="model" formControlName="model" class="form-control" readonly >
+
+        <label for="color">Cor</label>
+        <input type="text" name="color" formControlName="color" class="form-control" readonly>
+
+        <label for="price">Price</label>
+        <input type="number" name="price" formControlName="price" class="form-control" readonly>
+      </div>
+      <button class="btn btn-primary btn-sm" routerLink="" >VOLTAR</button>
+    </form>
+  </div>
+</div>
+

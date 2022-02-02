@@ -30,8 +30,8 @@
             <td>{{car.price | currency: 'BRL'}}</td>
             <td>{{car.action}}</td>
             <td>
-              <button type="button" class="btn btn-primary btn-sm">Detalhes</button>
-              <button type="button" class="btn btn-warning btn-sm ml-1">Editar</button>
+              <button type="button" class="btn btn-primary btn-sm" routerLink="/detail-cars/{{car.id}}">Detalhes</button>
+              <button type="button" class="btn btn-warning btn-sm ml-1" routerLink="/edit-cars/{{car.id}}">Editar</button>
               <button type="button" class="btn btn-danger btn-sm m1-1" (click)=" deleteCar(car) " >Deletar</button>
             </td>
           </tr>
